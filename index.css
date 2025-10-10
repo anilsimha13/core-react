@@ -1,0 +1,9 @@
+#main-div {
+  font-family: monospace;
+  font-weight: bolder;
+}
+#main-heading {
+  color: blue;
+  font-family: "Courier New", Courier, monospace;
+  font-style: italic;
+}
