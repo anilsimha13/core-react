@@ -1,0 +1,29 @@
+{
+  "name": "core-react",
+  "version": "1.0.0",
+  "description": "This is the React App for Food delivering",
+  "homepage": "https://github.com/anilsimha13/core-react#readme",
+  "bugs": {
+    "url": "https://github.com/anilsimha13/core-react/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anilsimha13/core-react.git"
+  },
+  "license": "ISC",
+  "author": "Anil Simha",
+  "type": "commonjs",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.0"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "browserslist": [
+    "last 20 versions"
+  ]
+}

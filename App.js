@@ -1,3 +1,5 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
 const heading = React.createElement("div", { key: 1, id: "main-div" }, [
   React.createElement(
     "h1",
@@ -26,6 +28,5 @@ const heading = React.createElement("div", { key: 1, id: "main-div" }, [
   ),
 ]);
 
-console.log(heading);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(heading);
