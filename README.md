@@ -6,6 +6,7 @@ _Facebook's_
 
 - [Episode-01 | Inception](#episode-01--inception)
 - [Episode-02 | Igniting our App](#episode-02--igniting-our-app)
+- [Episode-03 | Laying the foundation](#Episode-03--Laying-the-foundation)
 
 ## Episode-01 | Inception
 
@@ -109,3 +110,55 @@ root.render(heading);
   - File watching
   - Cache for faster rebuilds
   - Production Ready build `npx parcel build index.html`
+
+## Episode-03 | Laying the foundation
+
+### Key Concepts
+
+- On updating the scripts object in package.json then we can use those commands to run the build.
+
+```js
+  "scripts": {
+    "test": "jest",
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  //Terminal:
+  //npm start
+```
+
+- JSX - Javascript Syntax
+  - JSX is the HTML like syntax
+  - JSX transpiled before it reaches the Javascript
+  - Parcel gives this transpilation activity to Babel
+  - Attributes in JSX are camelcase
+  - Babel converts below code to React.createElement
+  - Takes care of cross-site scripting attacks
+
+```js
+const jsxHeading = <h1 id="heading">I am from JSX Heading</h1>;
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(jsxHeading);
+```
+
+- **React Components**
+  - Two Types:
+    - Class based (_outdated_)
+    - Functional based (_new_)
+- **Functional Components**
+  - Should start with Capital letter
+  - It's just a normal javascript function
+  - _Component Composition_: Component inside a component
+
+```js
+const Heading = () => {
+  return (
+    <div className="main-div">
+      <h1 className="main-heading">I am from Functional Component🚀</h1>
+    </div>
+  );
+};
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<Heading />); //Functional component renders
+```
