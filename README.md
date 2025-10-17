@@ -162,3 +162,12 @@ const Heading = () => {
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<Heading />); //Functional component renders
 ```
+
+## Episode-04 | Talk is cheap, show me the code
+
+### Key Concepts
+
+- props
+  - Passing the data to the component dynamically
+- map function
+- key is mandatory to be passed when using map function
