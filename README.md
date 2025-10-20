@@ -7,6 +7,8 @@ _Facebook's_
 - [Episode-01 | Inception](#episode-01--inception)
 - [Episode-02 | Igniting our App](#episode-02--igniting-our-app)
 - [Episode-03 | Laying the foundation](#Episode-03--Laying-the-foundation)
+- [Episode-04 | Talk is cheap, show me the code](Episode-04-Talk-is-cheap-show-me-the-code)
+- [Episode-05 | Let's get Hooked](Episode-05-Lets-get-Hooked)
 
 ## Episode-01 | Inception
 
@@ -171,3 +173,34 @@ root.render(<Heading />); //Functional component renders
   - Passing the data to the component dynamically
 - map function
 - key is mandatory to be passed when using map function
+
+## Episode-05 | Let's get Hooked
+
+### Key Concepts
+
+#### **Exports**
+
+- Default
+
+```js
+export default Body;
+import Body from "./components/Body";
+```
+
+- Named
+
+```js
+export const LOGO_URL =
+  "https://b.zmtcdn.com/web_assets/b40b97e677bc7b2ca77c58c61db266fe1603954218.png";
+import { LOGO_URL } from "../utils/constants";
+```
+
+#### **Hooks**
+
+- useState()
+- useEffect()
+
+#### **Reconciliation Algorithm(React Fiber)**
+
+- Virtual DOM is the representation of Actual DOM
+- Diff Algorithm: Finds the bifference b/w OLD and NEW Virtual DOM

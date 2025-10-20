@@ -1,44 +1,4 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-const Header = () => {
-  return (
-    <div className="header">
-      <div className="logo-container">
-        <img
-          className="logo"
-          src="https://b.zmtcdn.com/web_assets/b40b97e677bc7b2ca77c58c61db266fe1603954218.png"
-        ></img>
-      </div>
-      <div className="nav-items">
-        <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-
-const RestaurantCard = (props) => {
-  const { resData } = props;
-  const { name, cuisine, rating, cft, image } = resData?.info;
-  const { deliveryTime } = resData?.order;
-  return (
-    <div className="res-card">
-      <img className="res-logo" alt="res-logo" src={image.url}></img>
-      <h3>{name}</h3>
-      <h4>{cuisine.map((c) => c.name).join(", ")}</h4>
-      <h4>{rating.aggregate_rating} Stars</h4>
-      <h4>{deliveryTime}</h4>
-      <h4>{cft.text}</h4>
-    </div>
-  );
-};
-
-const resList = [
+export const resList = [
   {
     type: "restaurant",
     info: {
@@ -1908,27 +1868,3 @@ const resList = [
     bottomContainers: [],
   },
 ];
-
-const Body = () => {
-  return (
-    <div className="body-container">
-      <div className="search-container">Search</div>
-      <div className="res-container">
-        {resList.map((res) => (
-          <RestaurantCard resData={res} key={res.info.resId} />
-        ))}
-      </div>
-    </div>
-  );
-};
-const AppLayout = () => {
-  return (
-    <div className="app">
-      <Header />
-      <Body />
-    </div>
-  );
-};
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout />);
