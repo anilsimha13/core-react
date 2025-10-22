@@ -9,6 +9,7 @@ _Facebook's_
 - [Episode-03 | Laying the foundation](#Episode-03--Laying-the-foundation)
 - [Episode-04 | Talk is cheap, show me the code](Episode-04-Talk-is-cheap-show-me-the-code)
 - [Episode-05 | Let's get Hooked](Episode-05-Lets-get-Hooked)
+- [Episode-06 | Exploring the World](#episode-06--exploring-the-world)
 
 ## Episode-01 | Inception
 
@@ -198,9 +199,35 @@ import { LOGO_URL } from "../utils/constants";
 #### **Hooks**
 
 - useState()
+  - To create state variable
 - useEffect()
+  - When [ ] is empty, it runs only once after the initial render (componentDidMount)
+  - When there is a variable inside [var], it runs after the initial render and whenever the variable changes (componentDidUpdate)
+  - When there is no second argument, it runs after every render
+
+```js
+useEffect(() => {
+  fetchData();
+}, []);
+
+const fetchData = async () => {
+  const data = await fetch("https://swiggy-api-4c740.web.app/swiggy-api.json");
+  const json = await data.json();
+  console.log(json);
+};
+```
 
 #### **Reconciliation Algorithm(React Fiber)**
 
 - Virtual DOM is the representation of Actual DOM
 - Diff Algorithm: Finds the bifference b/w OLD and NEW Virtual DOM
+
+## Episode-06 | Exploring the World
+
+- **Monolith**
+  - All Services in one project
+- **Micro-service**
+  - Different service for different projects
+  - Single Responsibility Principle
+- Conditional Rendering
+  - Rendering based on the condition (ex: Shimmer UI)
