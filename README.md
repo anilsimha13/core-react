@@ -10,6 +10,7 @@ _Facebook's_
 - [Episode-04 | Talk is cheap, show me the code](Episode-04-Talk-is-cheap-show-me-the-code)
 - [Episode-05 | Let's get Hooked](Episode-05-Lets-get-Hooked)
 - [Episode-06 | Exploring the World](#episode-06--exploring-the-world)
+- [Episode-07 | Finding the Path](#episode-07--finding-the-path)
 
 ## Episode-01 | Inception
 
@@ -199,7 +200,10 @@ import { LOGO_URL } from "../utils/constants";
 #### **Hooks**
 
 - useState()
-  - To create state variable
+  - To create local state variable
+  - Never use it conditionally
+  - Always use it at the top level of the component
+  - Do not forget to import it from React
 - useEffect()
   - When [ ] is empty, it runs only once after the initial render (componentDidMount)
   - When there is a variable inside [var], it runs after the initial render and whenever the variable changes (componentDidUpdate)
@@ -231,3 +235,63 @@ const fetchData = async () => {
   - Single Responsibility Principle
 - Conditional Rendering
   - Rendering based on the condition (ex: Shimmer UI)
+
+## Episode-07 | Finding the Path
+
+- Routing
+
+  - Client-side routing
+  - Server-side routing
+
+- React Router
+  - Installation: `npm install react-router-dom`
+  - BrowserRouter as Router
+  - Routes and Route
+  - Link component for navigation
+  - useParams() hook to get the dynamic parameters from the URL
+  - Nested Routing
+  - Outlet component to render the child routes
+  - useNavigate() hook for programmatic navigation
+- RouterProvider component to provide the router to the app
+  `import { createBrowserRouter, RouterProvider } from "react-router-dom";`
+
+  - createBrowserRouter to create the router with route configuration
+
+  ```js
+  const appRouter = createBrowserRouter([
+    {
+      path: "/",
+      element: <AppLayout />,
+      children: [
+        {
+          path: "/",
+          element: <Body />,
+        },
+        {
+          path: "/about",
+          element: <About />,
+        },
+        {
+          path: "/contact",
+          element: <Contact />,
+        },
+      ],
+      errorElement: <Error />,
+    },
+  ]);
+  ```
+
+  - Wrap the app with RouterProvider and pass the router
+    `root.render(<RouterProvider router={appRouter} />);`
+  - Outlet
+    - `import { Outlet } from "react-router-dom";`
+    - Used to render the child routes in the parent route component
+    - Example: In AppLayout component, we use `<Outlet />` to render the child routes like Body, About, Contact etc.
+  - Link
+    - Used for navigation instead of anchor tag `<a>`
+    - Example: `<Link to="/about">About</Link>`
+
+```js
+const { name, cuisines } =
+  resInfo?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants[0]?.info;
+```

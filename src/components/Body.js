@@ -13,7 +13,7 @@ const Body = () => {
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://swiggy-api-4c740.web.app/swiggy-api.json"
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.4400802&lng=78.3489168"
     );
     const json = await data.json();
     console.log(json);
@@ -55,9 +55,9 @@ const Body = () => {
           className="filter-btn"
           onClick={() => {
             const filteredList = listOfRestaurants.filter(
-              (res) => res?.info?.avgRating > 4.2
+              (res) => res?.info?.avgRating > 4.3
             );
-            setListOfRestaurants(filteredList);
+            setFilteredRestaurant(filteredList);
           }}
         >
           Top Rated Restaurants
