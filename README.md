@@ -293,3 +293,56 @@ const fetchData = async () => {
   - useParams
     - Used to get the dynamic parameters from the URL
     - Example: If the route is `/restaurant/:id`, we can get the id using `const { id } = useParams();`
+
+## Episode-08 | Let's Get Classy
+
+- Class based component
+
+```js
+import React from "react";
+class UserClass extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0,
+    };
+    console.log(props);
+  }
+  render() {
+    const { name, location } = this.props;
+    const { count } = this.state;
+    return (
+      <div className="user-component">
+        <h1>Name: {name}</h1>
+        <h2>Learning React</h2>
+        <h3>Contact: ursanilsimha</h3>
+        <h4>Location: {location}</h4>
+        <h4>Count:{count}</h4>
+        <button
+          onClick={() => {
+            this.setState({
+              count: this.state.count + 1,
+            });
+          }}
+        >
+          Increase Count
+        </button>
+      </div>
+    );
+  }
+}
+
+export default UserClass;
+```
+
+- componentDidMount() in Class based component
+  - Runs after the component is mounted
+  - Constructor -> Render -> componentDidMount
+  - API calls can be made here
+
+```js
+componentDidMount() {
+  // Code to run after the component is mounted
+  console.log("Component did mount - Class Component");
+}
+```
