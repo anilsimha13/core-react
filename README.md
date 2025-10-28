@@ -290,8 +290,6 @@ const fetchData = async () => {
   - Link
     - Used for navigation instead of anchor tag `<a>`
     - Example: `<Link to="/about">About</Link>`
-
-```js
-const { name, cuisines } =
-  resInfo?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants[0]?.info;
-```
+  - useParams
+    - Used to get the dynamic parameters from the URL
+    - Example: If the route is `/restaurant/:id`, we can get the id using `const { id } = useParams();`
