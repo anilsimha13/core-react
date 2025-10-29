@@ -11,6 +11,8 @@ _Facebook's_
 - [Episode-05 | Let's get Hooked](Episode-05-Lets-get-Hooked)
 - [Episode-06 | Exploring the World](#episode-06--exploring-the-world)
 - [Episode-07 | Finding the Path](#episode-07--finding-the-path)
+- [Episode-08 | Let's Get Classy](#episode-08--lets-get-classy)
+- [Episode-09 | Optimizing our App](#episode-09--optimizing-our-app)
 
 ## Episode-01 | Inception
 
@@ -345,4 +347,35 @@ componentDidMount() {
   // Code to run after the component is mounted
   console.log("Component did mount - Class Component");
 }
+```
+
+## Episode-09 | Optimizing our App
+
+- Single Responsibility Principle
+  - Each component should have a single responsibility
+  - Easier to maintain and debug
+  - Modularity
+  - Reusability
+  - Testability
+- Custom Hooks
+  - Reusable logic in functional components
+  - Starts with "use"
+  - Example: useOnlineStatus, useFetch, useDebounce etc.
+- Lazy Loading / Code Splitting / Dynamic Import / On-Demand Loading / Chunking
+  - Load components only when needed
+  - `React.lazy()` and `Suspense` for code splitting
+  - Improves performance by reducing the initial load time
+
+```js
+import React, { lazy, Suspense } from "react";
+const Grocery = lazy(() => import("./components/Grocery"));
+...
+{
+        path: "/grocery",
+        element: (
+          <Suspense fallback={<h1>Loading...</h1>}>
+            <Grocery />
+          </Suspense>
+        ),
+      },
 ```
