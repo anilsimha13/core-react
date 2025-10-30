@@ -379,3 +379,18 @@ const Grocery = lazy(() => import("./components/Grocery"));
         ),
       },
 ```
+
+## Episode-10 | CSS in React | Tailwind CSS
+
+- **Popular CSS Frameworks**
+  - Bootstrap
+  - Materialize
+  - Ant Design
+  - Bulma
+  - Tailwind CSS
+- **Tailwind CSS**
+  - Utility-first CSS framework
+  - Highly customizable
+  - Installation: `npm install -D tailwindcss postcss autoprefixer` and `npx tailwindcss init -p`
+  - Configure `tailwind.config.js` to specify the paths to all of your template files
+  - Add the Tailwind directives to your CSS file
