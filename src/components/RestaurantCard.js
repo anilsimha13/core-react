@@ -13,8 +13,16 @@ const RestaurantCard = (props) => {
       <div className="res-card">
         <img
           className="res-logo"
-          alt="res-logo"
-          src={CDN_URL + cloudinaryImageId}
+          alt="Comfort Food Placeholder"
+          src={
+            cloudinaryImageId
+              ? CDN_URL + cloudinaryImageId
+              : "https://placehold.co/200x200/e4e4e7/404040?text=Restaurant"
+          }
+          onError={(e) => {
+            e.target.src =
+              "https://placehold.co/200x200/e4e4e7/404040?text=Not+Found";
+          }}
         />
         <h3>{name}</h3>
         <h4>{cuisines.map((cuisine) => cuisine).join(", ")}</h4>
