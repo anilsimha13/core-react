@@ -16,15 +16,17 @@ const RestaurantMenu = () => {
 
   if (resInfo === null) return <Shimmer />;
   return (
-    <div className="resMenu-container">
-      <h2>{name}</h2>
-      <p>
+    <div className="p-4 m-4 border border-gray-300 rounded-lg shadow-lg">
+      <h1 className="text-2xl font-semibold p-4 bg-linear-to-r from-pink-400 via-red-500 to-ornage-500 w-100 text-white rounded-md">
+        {name}
+      </h1>
+      <p className="text-gray-600 p-4 italic font-semibold">
         {cuisines.join(", ")} - {costForTwoMessage}
       </p>
-      <h3>Menu</h3>
+      <h3 className="text-xl font-semibold p-4">Menu</h3>
       <ul>
         {itemCards.map((item) => (
-          <li key={item.card.info.id}>
+          <li className="text-green-700 p-2 " key={item.card.info.id}>
             {item.card.info.name} - ₹
             {(item.card.info.price / 100).toFixed(2) ||
               (item.card.info.defaultPrice / 100).toFixed(2)}

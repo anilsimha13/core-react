@@ -394,3 +394,7 @@ const Grocery = lazy(() => import("./components/Grocery"));
   - Installation: `npm install -D tailwindcss postcss autoprefixer` and `npx tailwindcss init -p`
   - Configure `tailwind.config.js` to specify the paths to all of your template files
   - Add the Tailwind directives to your CSS file
+  - Dynamic styling using className attribute
+  - Example: `<div className="bg-blue-500 text-white p-4 rounded-lg">Hello Tailwind!</div>`
+  - Dynamic size or color using template literals
+  - Example: `<div className={`text-${size} text-${color}`}>Dynamic Text</div>`
