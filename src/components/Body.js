@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { vegNonVegLabel } from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import useOnlineStatus from "../utils/useOnlineStatus";
@@ -7,6 +7,8 @@ const Body = () => {
   let [listOfRestaurants, setListOfRestaurants] = useState([]);
   let [searchText, setSearchText] = useState("");
   let [filteredRestaurant, setFilteredRestaurant] = useState([]);
+  console.log(listOfRestaurants);
+  let VegNonVegLabel = vegNonVegLabel(RestaurantCard);
 
   useEffect(() => {
     fetchData();
@@ -72,9 +74,13 @@ const Body = () => {
         </div>
       </div>
       <div className="flex flex-wrap">
-        {filteredRestaurant.map((res) => (
-          <RestaurantCard resData={res} key={res.info.id} />
-        ))}
+        {filteredRestaurant.map((res) =>
+          res.info.veg ? (
+            <VegNonVegLabel resData={res} key={res.info.id} />
+          ) : (
+            <RestaurantCard resData={res} key={res.info.id} />
+          )
+        )}
       </div>
     </div>
   );

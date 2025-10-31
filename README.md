@@ -13,6 +13,8 @@ _Facebook's_
 - [Episode-07 | Finding the Path](#episode-07--finding-the-path)
 - [Episode-08 | Let's Get Classy](#episode-08--lets-get-classy)
 - [Episode-09 | Optimizing our App](#episode-09--optimizing-our-app)
+- [Episode-10 | CSS in React | Tailwind CSS](#episode-10--css-in-react--tailwind-css)
+- [Episode-11 | Data is the New Oil](#episode-11--data-is-the-new-oil)
 
 ## Episode-01 | Inception
 
@@ -398,3 +400,13 @@ const Grocery = lazy(() => import("./components/Grocery"));
   - Example: `<div className="bg-blue-500 text-white p-4 rounded-lg">Hello Tailwind!</div>`
   - Dynamic size or color using template literals
   - Example: `<div className={`text-${size} text-${color}`}>Dynamic Text</div>`
+
+## Episode-11 | Data is the New Oil
+
+- Higher-Order Components (HOC)
+  - A function that takes a component and returns a new component
+  - Used for reusing component logic
+  - Example: withLoading HOC to show a loading spinner while data is being fetched
+- Controlled vs Uncontrolled Components
+  - Controlled Components: Form elements where the value is controlled by React state
+  - Uncontrolled Components: Form elements where the value is controlled by the DOM

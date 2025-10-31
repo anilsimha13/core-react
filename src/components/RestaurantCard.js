@@ -10,7 +10,7 @@ const RestaurantCard = (props) => {
       to={"/restaurant/" + resData.info.id}
       style={{ textDecoration: "none", color: "inherit" }}
     >
-      <div className="res-card m-4 p-4 w-60 h-90 border border-gray-300 rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-105 hover:bg-gradient-to-b from-orange-100 via-red-200 to-pink-300 cursor-pointer flex flex-col">
+      <div className="res-card m-4 p-4 w-60 h-90 border border-gray-300 rounded-lg hover:shadow-lg transition-all duration-300  hover:bg-linear-to-b from-orange-100 via-red-200 to-pink-300 cursor-pointer flex flex-col">
         <img
           className="w-40 h-40 rounded-md"
           alt="Comfort Food Placeholder"
@@ -34,6 +34,17 @@ const RestaurantCard = (props) => {
       </div>
     </Link>
   );
+};
+
+export const vegNonVegLabel = (RestaurantCard) => {
+  return (props) => {
+    return (
+      <div>
+        <label className="m-2 p-2 bg-green-900 text-white absolute ">Veg</label>
+        <RestaurantCard {...props} />
+      </div>
+    );
+  };
 };
 
 export default RestaurantCard;
