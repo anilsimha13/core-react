@@ -15,6 +15,7 @@ _Facebook's_
 - [Episode-09 | Optimizing our App](#episode-09--optimizing-our-app)
 - [Episode-10 | CSS in React | Tailwind CSS](#episode-10--css-in-react--tailwind-css)
 - [Episode-11 | Data is the New Oil](#episode-11--data-is-the-new-oil)
+- [Episode-12 | Lets build our Store](#episode-12--lets-build-our-store)
 
 ## Episode-01 | Inception
 
@@ -426,3 +427,43 @@ const Grocery = lazy(() => import("./components/Grocery"));
   - Provide the context value using `Context.Provider`
   - Consume the context value using `useContext()` hook
   - Class based components can consume context using `static contextType = MyContext` or `<MyContext.Consumer>`
+
+## Episode-12 | Lets build our Store
+
+- It's not mandatory to use Redux for state management. We can use Context API or other state management libraries like Zustand, Recoil etc.
+- Redux
+  - A predictable state container for JavaScript apps
+  - Centralized store for the entire application state
+  - Actions, Reducers, Store
+  - Installation: `npm install redux react-redux`
+  - Create a store using `createStore()`
+  - Provide the store to the app using `<Provider store={store}>`
+  - Connect components to the store using `connect()` or `useSelector()` and `useDispatch()` hooks
+  - Redux is a separate library and can be used with any UI library/framework, not just React.
+  - <a href="https://redux-toolkit.js.org/introduction/getting-started">Redux Official Documentation</a>
+- Redux Toolkit
+
+  - Official, opinionated, batteries-included toolset for efficient Redux development
+  - Simplifies Redux setup and reduces boilerplate code
+  - Installation: `npm install @reduxjs/toolkit`
+  - Create a slice using `createSlice()`
+  - Configure the store using `configureStore()`
+  - Redux store is a big JavaScript object that holds the entire state of the application.
+  - Reducer vs Reducers
+    - Reducer: A single function that takes the current state and an action, and returns the new state.
+    - Reducers: Multiple reducer functions combined using `combineReducers()` to create a single root reducer.
+  - Selectors
+    - Functions that extract specific pieces of state from the Redux store.
+    - Used to encapsulate and reuse state selection logic.
+    - Example: `const selectUser = (state) => state.user;`
+
+- ConfigueStore
+
+  - The Redux store is configured using the `configureStore()` function from Redux Toolkit.
+  - It combines the reducers, applies middleware, and sets up the Redux DevTools extension.
+
+- Immer
+
+  - A library that allows you to work with immutable state in a more convenient way.
+  - It uses a proxy-based approach to track changes to the state and produces a new immutable state object.
+  - Redux Toolkit uses Immer under the hood to simplify state updates in reducers.

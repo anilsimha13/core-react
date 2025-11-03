@@ -6,12 +6,13 @@ const RestaurantCategory = ({ data, showIndex, showItems, setShowIndex }) => {
     setShowIndex(!showIndex);
   };
   return (
-    <div
-      onClick={() => {
-        handleClick();
-      }}
-    >
-      <div className="m-2 p-2 border border-gray-300 rounded-lg shadow-md bg-gray-100 hover:bg-gray-200 w-100">
+    <div>
+      <div
+        onClick={() => {
+          handleClick();
+        }}
+        className="m-2 p-2 border border-gray-300 rounded-lg shadow-md bg-gray-100 hover:bg-gray-200 w-100"
+      >
         <span className="text-lg font-semibold p-4 cursor-pointer">
           {data?.title} ({data?.itemCards?.length}) ⬇
         </span>

@@ -3,13 +3,17 @@ import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   let [initialClick, setInitialClick] = useState("Login");
   const onlineStatus = useOnlineStatus();
   const data = useContext(UserContext);
+  //selector
+  // Subscribe to the store
+  const cartItems = useSelector((store) => store.cart.items);
   return (
-    <div className="flex justify-between border border-gray-300 shadow-lg p-4 bg-orange-600 mb-2 bg-linear-to-r from-orange-400 via-red-500 to-pink-500 ">
+    <div className="flex justify-between border border-gray-300 shadow-lg p-4 bg-orange-600 mb-2 bg-linear-to-r from-red-400 via-pink-500 to-violet-500 ">
       <Link to="/" className="logo-container group relative block">
         <img
           className="w-56 transition-transform duration-300 hover:scale-110 hover:rotate-3 hover:animate-bounce cursor-pointer"
@@ -63,7 +67,7 @@ const Header = () => {
               to="/cart"
               style={{ textDecoration: "none", color: "inherit" }}
             >
-              Cart
+              🛒 ({cartItems.length} Items)
             </Link>
           </li>
           <li>
