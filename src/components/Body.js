@@ -7,7 +7,6 @@ const Body = () => {
   let [listOfRestaurants, setListOfRestaurants] = useState([]);
   let [searchText, setSearchText] = useState("");
   let [filteredRestaurant, setFilteredRestaurant] = useState([]);
-  console.log(listOfRestaurants);
   let VegNonVegLabel = vegNonVegLabel(RestaurantCard);
 
   useEffect(() => {

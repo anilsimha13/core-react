@@ -410,3 +410,19 @@ const Grocery = lazy(() => import("./components/Grocery"));
 - Controlled vs Uncontrolled Components
   - Controlled Components: Form elements where the value is controlled by React state
   - Uncontrolled Components: Form elements where the value is controlled by the DOM
+- Accordion Component
+  - A component that expands and collapses to show/hide content
+  - Used for FAQs, menus, etc.
+  - State management to track which section is open
+  - Controlled component to manage open/close state from parent component
+  - Lifting state up to manage the open section from the parent component
+- Props Drilling
+  - Passing props through multiple levels of components
+  - Can lead to messy code and hard to maintain
+  - Solutions: Context API, Redux, Zustand, etc.
+- Context API
+  - Provides a way to pass data through the component tree without having to pass props down manually at every level
+  - Create a context using `createContext()`
+  - Provide the context value using `Context.Provider`
+  - Consume the context value using `useContext()` hook
+  - Class based components can consume context using `static contextType = MyContext` or `<MyContext.Consumer>`

@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Header = () => {
   let [initialClick, setInitialClick] = useState("Login");
   const onlineStatus = useOnlineStatus();
+  const data = useContext(UserContext);
   return (
     <div className="flex justify-between border border-gray-300 shadow-lg p-4 bg-orange-600 mb-2 bg-linear-to-r from-orange-400 via-red-500 to-pink-500 ">
       <Link to="/" className="logo-container group relative block">
@@ -82,6 +84,7 @@ const Header = () => {
           >
             {initialClick}
           </button>
+          <li className="ml-4 font-bold">{data.loggedInUser}</li>
         </ul>
       </div>
     </div>

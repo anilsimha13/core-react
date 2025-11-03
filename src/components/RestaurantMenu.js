@@ -7,6 +7,7 @@ import RestaurantCategory from "./RestaurantCategory";
 const RestaurantMenu = () => {
   const { resId } = useParams();
   const resInfo = useRestaurantMenu(resId);
+  const [showIndex, setShowIndex] = useState(0);
 
   const { costForTwoMessage, name, cuisines } =
     resInfo?.cards[2]?.card?.card?.info || {};
@@ -20,7 +21,6 @@ const RestaurantMenu = () => {
         c.card?.card?.["@type"] ===
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     );
-  console.log(categories);
   if (resInfo === null) return <Shimmer />;
   return (
     <div className="p-4 m-4 border border-gray-300 rounded-lg shadow-lg">
@@ -30,11 +30,14 @@ const RestaurantMenu = () => {
       <p className="text-gray-600 p-4 italic font-semibold">
         {cuisines.join(", ")} - {costForTwoMessage}
       </p>
-      <h1 className="text-xl font-semibold p-4">Menu</h1>
-      {categories.map((category) => (
+      {categories.map((category, index) => (
         <RestaurantCategory
           key={category?.card?.card?.title}
           data={category?.card?.card}
+          showItems={showIndex === index}
+          setShowIndex={() => {
+            setShowIndex(showIndex === index ? null : index);
+          }}
         />
       ))}
       <ul></ul>
