@@ -467,3 +467,47 @@ const Grocery = lazy(() => import("./components/Grocery"));
   - A library that allows you to work with immutable state in a more convenient way.
   - It uses a proxy-based approach to track changes to the state and produces a new immutable state object.
   - Redux Toolkit uses Immer under the hood to simplify state updates in reducers.
+
+## Episode-13 | Time for Test
+
+- Types of Testing in Developement
+  - Unit Testing
+  - Integration Testing
+  - End-to-End (E2E) Testing
+- React Testing Library
+  - `npm install --save-dev @testing-library/react @testing-library/dom`
+- Jest
+  - `npm install --save-dev jest`
+  - `npm install --save-dev babel-jest @babel/core @babel/preset-env`
+
+```js
+//babel.config.js
+module.exports = {
+  presets: [["@babel/preset-env", { targets: { node: "current" } }]],
+};
+```
+
+- Configure .parcelrc to use babel for testing
+
+```json
+// .parcelrc
+{
+  "extends": "@parcel/config-default",
+  "transformers": {
+    "*.{js,mjs,jsx,cjs,ts,tsx}": [
+      "@parcel/transformer-js",
+      "@parcel/transformer-react-refresh-wrap"
+    ]
+  }
+}
+```
+
+- `npx create-jest`
+
+  - It creates a jest.config.js file
+
+- `npm install --save-dev jest-environment-jsdom`
+  - To use jsdom environment for testing React components
+- `npm install --save-dev @babel/preset-react`
+- `npm install --save-dev @testing-library/jest-dom`
+  - For custom jest matchers to test the state of the DOM
