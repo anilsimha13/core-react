@@ -511,3 +511,11 @@ module.exports = {
 - `npm install --save-dev @babel/preset-react`
 - `npm install --save-dev @testing-library/jest-dom`
   - For custom jest matchers to test the state of the DOM
+
+```js
+test("Make sure to have two input fields for the contact component", () => {
+  render(<Contact />);
+  const inputElements = screen.getAllByRole("textbox");
+  expect(inputElements.length).toBe(3);
+});
+```
